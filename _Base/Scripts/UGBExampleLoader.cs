@@ -21,13 +21,13 @@ public class UGBExampleLoader : MonoBehaviour
     }
 
 
-    void NextExample()
+    public void NextExample()
     {
         currentIndex++;
         InitExampleClass(currentIndex);
     }
 
-    void PreviousExample()
+    public void PreviousExample()
     {
         currentIndex--;
         InitExampleClass(currentIndex);

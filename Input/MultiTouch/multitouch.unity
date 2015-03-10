@@ -166,10 +166,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: .5
       objectReference: {fileID: 0}
-    - target: {fileID: 22446468, guid: c3839b5eeda400e46b5b98ac1ed46e89, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: -290.666656
-      objectReference: {fileID: 0}
     - target: {fileID: 22418120, guid: c3839b5eeda400e46b5b98ac1ed46e89, type: 2}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -177,6 +173,10 @@ Prefab:
     - target: {fileID: 22418120, guid: c3839b5eeda400e46b5b98ac1ed46e89, type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22446468, guid: c3839b5eeda400e46b5b98ac1ed46e89, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -290.666656
       objectReference: {fileID: 0}
     - target: {fileID: 22465300, guid: c3839b5eeda400e46b5b98ac1ed46e89, type: 2}
       propertyPath: m_AnchorMin.y
