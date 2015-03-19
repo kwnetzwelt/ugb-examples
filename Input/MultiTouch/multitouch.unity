@@ -168,11 +168,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22418120, guid: c3839b5eeda400e46b5b98ac1ed46e89, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22418120, guid: c3839b5eeda400e46b5b98ac1ed46e89, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22446468, guid: c3839b5eeda400e46b5b98ac1ed46e89, type: 2}
       propertyPath: m_SizeDelta.y
@@ -249,6 +249,10 @@ Prefab:
     - target: {fileID: 22409348, guid: c3839b5eeda400e46b5b98ac1ed46e89, type: 2}
       propertyPath: m_SizeDelta.y
       value: 60.6666641
+      objectReference: {fileID: 0}
+    - target: {fileID: 11498810, guid: c3839b5eeda400e46b5b98ac1ed46e89, type: 2}
+      propertyPath: group
+      value: Examples.Input.MultiTouch
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3839b5eeda400e46b5b98ac1ed46e89, type: 2}

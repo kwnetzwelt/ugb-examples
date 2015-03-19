@@ -2,52 +2,64 @@
 using System.Collections;
 using UnityGameBase;
 
-public class MultiTouchExample : UGBExampleBase {
-
-    TouchInformation touch;
-
-	void Start () {
-        UGB.Input.TouchStart += Input_TouchStart;
-	}
-
-    private void Input_TouchStart(TouchInformation touchInfo)
+namespace Examples.Input.MultiTouch
+{
+    public class MultiTouchExample : UGBExampleBase
     {
-        Debug.Log("Touch was started");
-        touch = touchInfo;
-        
-    }
 
-    void Update()
-    {
-        if (touch != null)
+        void OnEnable()
         {
-            Debug.Log("Touch active");
+            UGB.Input.TouchStart += Input_TouchStart;
+            UGB.Input.TouchEnd += Input_TouchEnd;
+            UGB.Input.TouchUpdate += Input_TouchUpdate;
+        }
 
-            if (touch.IsDead)
+        void OnDisable()
+        {
+            UGB.Input.TouchStart -= Input_TouchStart;
+            UGB.Input.TouchEnd -= Input_TouchEnd;
+            UGB.Input.TouchUpdate -= Input_TouchUpdate;
+        }
+
+        private void Input_TouchStart(TouchInformation touchInfo)
+        {
+            Debug.Log("Touch was started");
+        }
+
+
+        void Input_TouchUpdate(TouchInformation touchInfo)
+        {
+            Debug.Log("Touch updated");
+        }
+
+
+        void Input_TouchEnd(TouchInformation touchInfo)
+        {
+            Debug.Log("Touch ended");
+        }
+
+        #region example details
+        public override string Title
+        {
+            get { return "MultiTouch Example"; }
+        }
+
+        public override string Description
+        {
+            get
             {
-                Debug.Log("Touch died");
-                touch = null;
+                return
+                    "Touches and clicks are detected through the same API. " +
+                    "In this example, you can click/tap then hold and release. " +
+                    "Notice the debug output. ";
             }
         }
-    }
 
-    public override string Title
-    {
-        get { return "MultiTouch Example"; }
-    }
-
-    public override string Description
-    {
-        get { return 
-            "Touches and clicks are detected through the same API. " +
-            "In this example, you can click/tap then hold and release. " +
-            "Notice the debug output. " +
-            "TouchInformation instances are persistent. " + 
-            "Once created they will be updated by the system. " +
-            "Hence the possibility to use TouchInformation in the update method. " +
-            "\n\n" +
-            "TouchInformation has a rich API. For example you can extrapolate. " + 
-            "This is useful to simulate a rubber band effect. "; 
+        public override int Index
+        {
+            get { return 0; }
         }
+        #endregion
     }
+
 }

@@ -8,14 +8,33 @@ public class UGBExampleLoader : MonoBehaviour
     public UnityEngine.UI.Text title;
     public UnityEngine.UI.Text description;
 
+    public string group;
 
     UGBExampleBase currentExample;
     int currentIndex = 0;
     List<System.Type> exampleClasses = new List<System.Type>();
-
-    void OnEnable()
+    List<UGBExampleBase> examples = new List<UGBExampleBase>();
+    IEnumerator Start()
     {
+        yield return new WaitForEndOfFrame();
         exampleClasses = UnityGameBase.Core.Utils.UGBHelpers.GetTypesAssignableFrom<UGBExampleBase>();
+
+        exampleClasses = exampleClasses.FindAll((type) =>
+        {
+            return type.Namespace.EndsWith(group);
+        });
+        
+        foreach(var exampleClass in exampleClasses)
+        {
+            var itm = this.gameObject.AddComponent(exampleClass) as UGBExampleBase;
+            itm.enabled = false;
+            examples.Add(itm);
+        }
+
+        examples.Sort((a, b) => {
+            return a.Index.CompareTo(b.Index);
+        });
+
         Debug.Log(string.Format("Found {0} example classes", exampleClasses.Count));
         InitExampleClass(0);
     }
@@ -39,16 +58,12 @@ public class UGBExampleLoader : MonoBehaviour
         
         if(currentExample != null)
         {
-            
-            Destroy(currentExample);
+            currentExample.enabled = false;
             currentExample = null;
         }
 
-        System.Type nextType = exampleClasses[index];
-        Debug.Log(string.Format("Will initialize {0} example. ", nextType));
-
-        currentExample = this.gameObject.AddComponent(nextType) as UGBExampleBase;
-
+        currentExample = examples[index];
+        currentExample.enabled = true;
         UpdateDescriptionPanel();
     }
 
