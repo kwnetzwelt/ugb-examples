@@ -8,15 +8,15 @@ namespace Examples.Input.MultiTouch
         TouchInformation myTouch;
         void OnEnable()
         {
-            UGB.Input.TouchStart += Input_TouchStart;
+            UGB.Input.TouchStart += OnTouchStart;
         }
 
         void OnDisable()
         {
-            UGB.Input.TouchStart -= Input_TouchStart;
+            UGB.Input.TouchStart -= OnTouchStart;
         }
 
-        void Input_TouchStart(TouchInformation touchInfo)
+        void OnTouchStart(TouchInformation touchInfo)
         {
             if (myTouch != null)
             {

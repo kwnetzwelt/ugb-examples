@@ -13,10 +13,10 @@ namespace Examples.Input.MultiTouch
 
         void OnEnable()
         {
-            UGB.Input.TouchEnd += Input_TouchEnd;
+            UGB.Input.TouchEnd += OnTouchEnd;
         }
 
-        void Input_TouchEnd(TouchInformation touchInfo)
+        void OnTouchEnd(TouchInformation touchInfo)
         {
             Debug.Log("Duration in Seconds: " + (Time.time - touchInfo.birthTime));
             Debug.Log("Distance: " + touchInfo.distance);
@@ -25,7 +25,7 @@ namespace Examples.Input.MultiTouch
 
         void OnDisable()
         {
-            UGB.Input.TouchEnd -= Input_TouchEnd;
+            UGB.Input.TouchEnd -= OnTouchEnd;
         }
 
         #region example details

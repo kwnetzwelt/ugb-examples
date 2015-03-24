@@ -9,31 +9,31 @@ namespace Examples.Input.MultiTouch
 
         void OnEnable()
         {
-            UGB.Input.TouchStart += Input_TouchStart;
-            UGB.Input.TouchEnd += Input_TouchEnd;
-            UGB.Input.TouchUpdate += Input_TouchUpdate;
+            UGB.Input.TouchStart += OnTouchStart;
+            UGB.Input.TouchEnd += OnTouchEnd;
+            UGB.Input.TouchUpdate += OnTouchUpdate;
         }
 
         void OnDisable()
         {
-            UGB.Input.TouchStart -= Input_TouchStart;
-            UGB.Input.TouchEnd -= Input_TouchEnd;
-            UGB.Input.TouchUpdate -= Input_TouchUpdate;
+            UGB.Input.TouchStart -= OnTouchStart;
+            UGB.Input.TouchEnd -= OnTouchEnd;
+            UGB.Input.TouchUpdate -= OnTouchUpdate;
         }
 
-        private void Input_TouchStart(TouchInformation touchInfo)
+        private void OnTouchStart(TouchInformation touchInfo)
         {
             Debug.Log("Touch was started");
         }
 
 
-        void Input_TouchUpdate(TouchInformation touchInfo)
+        void OnTouchUpdate(TouchInformation touchInfo)
         {
             Debug.Log("Touch updated");
         }
 
 
-        void Input_TouchEnd(TouchInformation touchInfo)
+        void OnTouchEnd(TouchInformation touchInfo)
         {
             Debug.Log("Touch ended");
         }
