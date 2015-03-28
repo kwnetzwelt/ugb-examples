@@ -2,16 +2,31 @@
 using System.Collections;
 using UnityGameBase;
 
+namespace Examples.Game
+{
+	public class GameLogicExample : UGBExampleBase {
+		#region implemented abstract members of UGBExampleBase
 
-public class GameLogicExample : Game {
+		public override int Index {
+			get {
+				return 1;
+			}
+		}
 
-    protected override void Initialize()
-    {
-        
-    }
+		public override string Title {
+			get {
+				return "";
+			}
+		}
 
-    protected override void GameSetupReady()
-    {
-        
-    }
+		public override string Description {
+			get {
+				return "";
+			}
+		}
+
+		#endregion
+
+
+	}
 }

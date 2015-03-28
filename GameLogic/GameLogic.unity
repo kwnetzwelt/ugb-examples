@@ -252,7 +252,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11498810, guid: c3839b5eeda400e46b5b98ac1ed46e89, type: 2}
       propertyPath: group
-      value: Examples.Input.MultiTouch
+      value: Examples.Game
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3839b5eeda400e46b5b98ac1ed46e89, type: 2}
