@@ -1,0 +1,19 @@
+language: csharp
+solution: unity.sln
+git:
+  submodules: false
+env:
+  matrix:
+    - MONO_VERSION="3.5.0"
+before_install:
+    - "npm install unity-solution-2 -g"
+    - "pushd UGBExamples"
+    - "git clone -b development https://github.com/kwnetzwelt/ugb-source"
+    - "popd"
+    - "unitysolution ./UGBExamples Standalone"
+script:
+    - "xbuild /p:Configuration=Debug unity.sln"
+branches:
+    only:
+        - master
+        - development
