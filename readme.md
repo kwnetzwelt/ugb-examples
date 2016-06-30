@@ -4,6 +4,10 @@ This repository contains examples on how to use the Unity Game Base. Unity Game 
 
 Unity Game Base is a toolkit for Game Development with the Unity Engine. It adds features, which are not present within the Engine and defines a basic guide on how to structure game development in Unity. 
 
+ **UGB Master:** | [![Build Status](https://travis-ci.org/kwnetzwelt/ugb-source.svg?branch=master)](https://travis-ci.org/kwnetzwelt/ugb-source) 
+ **UGB Development:** | [![Build Status](https://travis-ci.org/kwnetzwelt/ugb-source.svg?branch=development)](https://travis-ci.org/kwnetzwelt/ugb-source) 
+
+
 ## Install UGB examples
 
 1. Setup a Unity project or use open your existing Unity Project
